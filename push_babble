@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import json
+import urllib2
+data=json.dumps({"temp":32.})
+url='http://dev.websiteonline.website/saveSensorData'
+req = urllib2.Request(url, data, {'Content-Type': 'application/json'})
+f = urllib2.urlopen(req)
+response = f.read()
+print response
+f.close()
